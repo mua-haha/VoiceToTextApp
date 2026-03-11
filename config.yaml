@@ -1,0 +1,59 @@
+# Voice to Text Application Configuration
+
+# Porcupine Wake Word Configuration
+porcupine:
+  # Get free AccessKey from https://console.picovoice.ai/
+  access_key: "AccessKey=="
+  
+  # Path to custom wake word model (.ppn file)
+  keyword_paths:
+    - "models/列宁_zh_windows_v4_0_0.ppn"
+  
+  # Detection sensitivity (0.0-1.0, higher = more sensitive)
+  sensitivity: 0.5
+
+# Whisper Speech-to-Text Configuration
+whisper:
+  # Model size: tiny, base, small, medium, large, turbo
+  # tiny/base: fast, lower accuracy
+  # small/medium: balanced (recommended for laptop)
+  # large: best accuracy, slower
+  model: "small"
+  
+  # Language code (zh for Chinese, en for English, auto for auto-detect)
+  language: "zh"
+  
+  # Device to use: cpu, cuda (GPU), mps (Apple Silicon)
+  device: "cpu"
+
+# Audio Recording Configuration
+audio:
+  # Sample rate (16000 is standard for Whisper)
+  sample_rate: 16000
+  
+  # Channels (1 = mono)
+  channels: 1
+  
+  # Chunk size for audio processing
+  chunk_size: 512
+  
+  # Silence detection threshold in seconds
+  # Recording stops after this many seconds of silence
+  silence_threshold: 2.0
+  
+  # Minimum recording duration in seconds
+  min_record_duration: 0.5
+
+# Output Configuration
+output:
+  # Save transcriptions to file
+  save_to_file: true
+  
+  # Output directory for transcriptions
+  output_dir: "recordings"
+  
+  # Save format: txt, json, markdown
+  save_format: "txt"
+  
+  # Print results to console
+  print_to_console: true

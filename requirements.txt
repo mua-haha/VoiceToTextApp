@@ -1,0 +1,5 @@
+pvporcupine>=2.1.0
+openai-whisper>=20231106
+pyaudio>=0.2.14
+numpy>=1.24.0
+pyyaml>=6.0
